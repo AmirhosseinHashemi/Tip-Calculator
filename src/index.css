@@ -193,3 +193,49 @@ input:focus {
   color: var(--color-neutral-veryDarkCyan);
   background-color: var(--color-primary-strongCyan);
 }
+
+@media only screen and (min-width: 1440px) {
+  main {
+    max-width: 80rem;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+
+    border-radius: 2rem;
+  }
+
+  .form__tips {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  }
+
+  .form__tip,
+  .result__reset {
+    transition: all 0.25s;
+  }
+
+  .form__tip:hover,
+  .result__reset:hover {
+    color: var(--color-neutral-veryDarkCyan);
+    background-color: var(--color-neutral-lightGrayishCyan);
+  }
+
+  .result {
+    padding: 2.8rem;
+    grid-template-rows: repeat(2, max-content);
+  }
+
+  .result__reset {
+    align-self: end;
+  }
+
+  .result__title {
+    font-size: 1.4rem;
+  }
+
+  .result__title > span {
+    font-size: 1.2rem;
+  }
+
+  .result__value {
+    font-size: 2.8rem;
+  }
+}
