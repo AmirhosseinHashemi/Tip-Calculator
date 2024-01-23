@@ -1,6 +1,10 @@
-export default function Button({ children }) {
+export default function Button({ children, onClick }) {
   return (
-    <button className="form__tip" type="button">
+    <button
+      onClick={(e) => onClick(e.target.innerText)}
+      className="form__tip"
+      type="button"
+    >
       {children}
     </button>
   );

@@ -1,7 +1,15 @@
 import Button from "./Button";
 import Input from "./Input";
 
-export default function Form({ bill, onBill, people, onPeople }) {
+export default function Form({
+  bill,
+  onBill,
+  people,
+  onPeople,
+  onTip,
+  customTip,
+  onCustomTip,
+}) {
   return (
     <form className="form" id="form">
       <Input name="bill" bill={bill} handleBill={onBill}>
@@ -11,11 +19,11 @@ export default function Form({ bill, onBill, people, onPeople }) {
       <div className="form__tips" aria-label="tips">
         <h2 className="form__label">Select Tip %</h2>
 
-        <Button>5%</Button>
-        <Button>10%</Button>
-        <Button>15%</Button>
-        <Button>25%</Button>
-        <Button>50%</Button>
+        <Button onClick={onTip}>5%</Button>
+        <Button onClick={onTip}>10%</Button>
+        <Button onClick={onTip}>15%</Button>
+        <Button onClick={onTip}>25%</Button>
+        <Button onClick={onTip}>50%</Button>
 
         <label htmlFor="custom-tip">
           <input
@@ -23,6 +31,8 @@ export default function Form({ bill, onBill, people, onPeople }) {
             name="custom"
             id="custom-tip"
             placeholder="Custom"
+            value={customTip}
+            onChange={(e) => onCustomTip(+e.target.value)}
           />
         </label>
       </div>
