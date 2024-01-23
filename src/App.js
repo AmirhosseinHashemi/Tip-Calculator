@@ -42,19 +42,8 @@ function Form() {
 function Result() {
   return (
     <section className="result">
-      <div className="result__row" aria-label="tip amount">
-        <p className="result__title">
-          Tip Amount <span>/ person</span>
-        </p>
-        <p className="result__value">0</p>
-      </div>
-
-      <div className="result__row" aria-label="total">
-        <p className="result__title">
-          Total <span>/ person</span>
-        </p>
-        <p className="result__value">0</p>
-      </div>
+      <ResultRow>Tip Amount</ResultRow>
+      <ResultRow>Total</ResultRow>
 
       <button className="result__reset" type="button">
         Reset
@@ -79,5 +68,16 @@ function Button({ children }) {
     <button className="form__tip" type="button">
       {children}
     </button>
+  );
+}
+
+function ResultRow({ children }) {
+  return (
+    <div className="result__row" aria-label={children}>
+      <p className="result__title">
+        {children} <span>/ person</span>
+      </p>
+      <p className="result__value">0</p>
+    </div>
   );
 }
