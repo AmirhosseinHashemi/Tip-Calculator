@@ -36,6 +36,7 @@ export default function App() {
           onPeople={handlePeople}
           people={people}
           onTip={handleTip}
+          tip={tip}
           customTip={customTip}
           onCustomTip={handleCustomTip}
         />

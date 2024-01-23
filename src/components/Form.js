@@ -7,6 +7,7 @@ export default function Form({
   people,
   onPeople,
   onTip,
+  tip,
   customTip,
   onCustomTip,
 }) {
@@ -19,11 +20,21 @@ export default function Form({
       <div className="form__tips" aria-label="tips">
         <h2 className="form__label">Select Tip %</h2>
 
-        <Button onClick={onTip}>5%</Button>
-        <Button onClick={onTip}>10%</Button>
-        <Button onClick={onTip}>15%</Button>
-        <Button onClick={onTip}>25%</Button>
-        <Button onClick={onTip}>50%</Button>
+        <Button tip={tip} onClick={onTip}>
+          5
+        </Button>
+        <Button tip={tip} onClick={onTip}>
+          10
+        </Button>
+        <Button tip={tip} onClick={onTip}>
+          15
+        </Button>
+        <Button tip={tip} onClick={onTip}>
+          25
+        </Button>
+        <Button tip={tip} onClick={onTip}>
+          50
+        </Button>
 
         <label htmlFor="custom-tip">
           <input
