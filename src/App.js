@@ -17,21 +17,13 @@ function Form() {
 
       <div className="form__tips" aria-label="tips">
         <h2 className="form__label">Select Tip %</h2>
-        <button className="form__tip" type="button">
-          5%
-        </button>
-        <button className="form__tip" type="button">
-          10%
-        </button>
-        <button className="form__tip selected" type="button">
-          15%
-        </button>
-        <button className="form__tip" type="button">
-          25%
-        </button>
-        <button className="form__tip" type="button">
-          50%
-        </button>
+
+        <Button>5%</Button>
+        <Button>10%</Button>
+        <Button>15%</Button>
+        <Button>25%</Button>
+        <Button>50%</Button>
+
         <label htmlFor="custom-tip">
           <input
             type="text"
@@ -79,5 +71,13 @@ function Input({ name, children }) {
       </label>
       <input type="text" name={name} id={name} placeholder="0" />
     </div>
+  );
+}
+
+function Button({ children }) {
+  return (
+    <button className="form__tip" type="button">
+      {children}
+    </button>
   );
 }
