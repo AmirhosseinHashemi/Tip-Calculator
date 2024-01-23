@@ -1,10 +1,12 @@
 import Button from "./Button";
 import Input from "./Input";
 
-export default function Form() {
+export default function Form({ bill, onBill, people, onPeople }) {
   return (
     <form className="form" id="form">
-      <Input name="bill">Bill</Input>
+      <Input name="bill" bill={bill} handleBill={onBill}>
+        Bill
+      </Input>
 
       <div className="form__tips" aria-label="tips">
         <h2 className="form__label">Select Tip %</h2>
@@ -25,7 +27,9 @@ export default function Form() {
         </label>
       </div>
 
-      <Input name="people">Number of People</Input>
+      <Input name="people" people={people} handlePeople={onPeople}>
+        Number of People
+      </Input>
     </form>
   );
 }
