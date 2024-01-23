@@ -145,3 +145,51 @@ input:focus {
   background-repeat: no-repeat;
   background-position: 1.5rem center;
 }
+
+.result {
+  display: grid;
+  gap: 1.6rem;
+
+  background-color: var(--color-neutral-veryDarkCyan);
+  padding: 2.2rem;
+  padding-top: 3.2rem;
+  border-radius: 0.8rem;
+}
+
+.result__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result__title {
+  display: flex;
+  flex-direction: column;
+
+  font-size: 1.2rem;
+  color: var(--color-neutral-veryLightGrayishCyan);
+}
+
+.result__title > span {
+  font-size: 1rem;
+  color: var(--color-neutral-darkGrayishCyan);
+}
+
+.result__value {
+  position: relative;
+  font-size: 2.4rem;
+  color: var(--color-primary-strongCyan);
+}
+
+.result__value::before {
+  position: absolute;
+  content: "$";
+  left: -1.5rem;
+}
+
+.result__reset {
+  width: 100%;
+  text-transform: uppercase;
+  color: var(--color-neutral-veryDarkCyan);
+  background-color: var(--color-primary-strongCyan);
+}

@@ -4,6 +4,7 @@ export default function App() {
       <h1>splitter</h1>
       <main>
         <Form />
+        <Result />
       </main>
     </>
   );
@@ -53,5 +54,29 @@ function Form() {
         <input type="text" name="people" id="people" placeholder="0" />
       </div>
     </form>
+  );
+}
+
+function Result() {
+  return (
+    <section className="result">
+      <div className="result__row" aria-label="tip amount">
+        <p className="result__title">
+          Tip Amount <span>/ person</span>
+        </p>
+        <p className="result__value">0</p>
+      </div>
+
+      <div className="result__row" aria-label="total">
+        <p className="result__title">
+          Total <span>/ person</span>
+        </p>
+        <p className="result__value">0</p>
+      </div>
+
+      <button className="result__reset" type="button">
+        Reset
+      </button>
+    </section>
   );
 }
