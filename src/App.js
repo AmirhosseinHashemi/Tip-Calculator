@@ -13,12 +13,7 @@ export default function App() {
 function Form() {
   return (
     <form className="form" id="form">
-      <div className="form__bill" aria-label="bill">
-        <label className="form__label" htmlFor="bill">
-          Bill
-        </label>
-        <input type="text" name="bill" id="bill" placeholder="0" />
-      </div>
+      <Input name="bill">Bill</Input>
 
       <div className="form__tips" aria-label="tips">
         <h2 className="form__label">Select Tip %</h2>
@@ -47,12 +42,7 @@ function Form() {
         </label>
       </div>
 
-      <div className="form__people" aria-label="people">
-        <label className="form__label" htmlFor="people">
-          Number of People
-        </label>
-        <input type="text" name="people" id="people" placeholder="0" />
-      </div>
+      <Input name="people">Number of People</Input>
     </form>
   );
 }
@@ -78,5 +68,16 @@ function Result() {
         Reset
       </button>
     </section>
+  );
+}
+
+function Input({ name, children }) {
+  return (
+    <div className={`form__${name}`} aria-label={name}>
+      <label className="form__label" htmlFor={name}>
+        {children}
+      </label>
+      <input type="text" name={name} id={name} placeholder="0" />
+    </div>
   );
 }
