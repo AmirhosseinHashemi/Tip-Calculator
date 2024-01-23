@@ -3,8 +3,8 @@ import Form from "./Form";
 import Result from "./Result";
 
 export default function App() {
-  const [bill, setBill] = useState(null);
-  const [people, setPeople] = useState(null);
+  const [bill, setBill] = useState("");
+  const [people, setPeople] = useState("");
 
   function handleBill(value) {
     setBill(value);
