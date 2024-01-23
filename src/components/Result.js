@@ -1,10 +1,10 @@
 import ResultRow from "./ResultRow";
 
-export default function Result() {
+export default function Result({ amount, total }) {
   return (
     <section className="result">
-      <ResultRow>Tip Amount</ResultRow>
-      <ResultRow>Total</ResultRow>
+      <ResultRow value={amount}>Tip Amount</ResultRow>
+      <ResultRow value={total}>Total</ResultRow>
 
       <button className="result__reset" type="button">
         Reset

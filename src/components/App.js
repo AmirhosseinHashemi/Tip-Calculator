@@ -8,6 +8,10 @@ export default function App() {
   const [tip, setTip] = useState(0);
   const [customTip, setCustomTip] = useState("");
 
+  const percent = tip || customTip;
+  const amount = percent && people ? (bill * percent) / 100 : 0;
+  const total = people ? amount * people : 0;
+
   function handleBill(value) {
     setBill(value);
   }
@@ -40,7 +44,7 @@ export default function App() {
           customTip={customTip}
           onCustomTip={handleCustomTip}
         />
-        <Result />
+        <Result total={total} amount={amount} />
       </main>
     </>
   );
