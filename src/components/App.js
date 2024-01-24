@@ -30,6 +30,13 @@ export default function App() {
     setTip(0);
   }
 
+  function handleReset() {
+    setBill("");
+    setPeople("");
+    setCustomTip("");
+    setTip(0);
+  }
+
   return (
     <>
       <h1>splitter</h1>
@@ -44,7 +51,7 @@ export default function App() {
           customTip={customTip}
           onCustomTip={handleCustomTip}
         />
-        <Result total={total} amount={amount} />
+        <Result onReset={handleReset} total={total} amount={amount} />
       </main>
     </>
   );
