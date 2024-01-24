@@ -9,7 +9,7 @@ export default function App() {
   const [customTip, setCustomTip] = useState("");
 
   const percent = tip || customTip;
-  const amount = percent && people ? (bill * percent) / 100 : 0;
+  const amount = percent && people ? (Number(bill) * percent) / 100 : 0;
   const total = people ? amount * people : 0;
 
   function handleBill(value) {

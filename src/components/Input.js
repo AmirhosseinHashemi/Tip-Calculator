@@ -19,7 +19,7 @@ export default function Input({
         value={name === "people" ? people : bill}
         onChange={(e) =>
           name === "bill"
-            ? handleBill(+e.target.value)
+            ? handleBill(e.target.value)
             : handlePeople(+e.target.value)
         }
       />
