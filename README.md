@@ -20,7 +20,7 @@ Users should be able to:
 
 ### Links 🔗
 
-- Live Site URL: []()
+- Live Site URL: [Tip calculator](https://tip-calculator-iota-ten.vercel.app/)
 
 ## My process 🚀
 
