@@ -1,7 +1,7 @@
-export default function Button({ children, onClick, tip }) {
+export default function Button({ tip, children, dispatch }) {
   return (
     <button
-      onClick={(e) => onClick(e.target.innerText)}
+      onClick={(e) => dispatch({ type: "setTip", payload: e.target.innerText })}
       className={`form__tip ${String(tip) === children ? "selected" : ""}`}
       type="button"
     >

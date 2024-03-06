@@ -1,11 +1,4 @@
-export default function Input({
-  name,
-  children,
-  bill,
-  handleBill,
-  people,
-  handlePeople,
-}) {
+export default function Input({ name, bill, people, children, dispatch }) {
   return (
     <div className={`form__${name}`} aria-label={name}>
       <label className="form__label" htmlFor={name}>
@@ -19,8 +12,8 @@ export default function Input({
         value={name === "people" ? people : bill}
         onChange={(e) =>
           name === "bill"
-            ? handleBill(e.target.value)
-            : handlePeople(+e.target.value)
+            ? dispatch({ type: "setBill", payload: Number(e.target.value) })
+            : dispatch({ type: "setPeople", payload: Number(e.target.value) })
         }
       />
     </div>
