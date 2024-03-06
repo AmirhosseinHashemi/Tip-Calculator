@@ -1,4 +1,9 @@
-export default function Input({ name, bill, people, children, dispatch }) {
+import { useCalc, useDispatchCalc } from "./CalcContext";
+
+export default function Input({ children, name }) {
+  const { bill, people } = useCalc();
+  const { dispatch } = useDispatchCalc();
+
   return (
     <div className={`form__${name}`} aria-label={name}>
       <label className="form__label" htmlFor={name}>

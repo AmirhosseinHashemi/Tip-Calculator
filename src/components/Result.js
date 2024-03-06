@@ -1,6 +1,10 @@
+import { useCalc, useDispatchCalc } from "./CalcContext";
 import ResultRow from "./ResultRow";
 
-export default function Result({ amount, total, dispatch }) {
+export default function Result() {
+  const { amount, total } = useCalc();
+  const { dispatch } = useDispatchCalc();
+
   return (
     <section className="result">
       <ResultRow value={amount}>Tip Amount</ResultRow>

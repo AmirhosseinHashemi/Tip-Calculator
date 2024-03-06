@@ -1,31 +1,23 @@
+import { useCalc, useDispatchCalc } from "./CalcContext";
 import Button from "./Button";
 import Input from "./Input";
 
-export default function Form({ bill, people, tip, customTip, dispatch }) {
+export default function Form() {
+  const { customTip } = useCalc();
+  const { dispatch } = useDispatchCalc();
+
   return (
     <form className="form" id="form">
-      <Input name="bill" bill={bill} dispatch={dispatch}>
-        Bill
-      </Input>
+      <Input name="bill">Bill</Input>
 
       <div className="form__tips" aria-label="tips">
         <h2 className="form__label">Select Tip %</h2>
 
-        <Button tip={tip} dispatch={dispatch}>
-          5
-        </Button>
-        <Button tip={tip} dispatch={dispatch}>
-          10
-        </Button>
-        <Button tip={tip} dispatch={dispatch}>
-          15
-        </Button>
-        <Button tip={tip} dispatch={dispatch}>
-          25
-        </Button>
-        <Button tip={tip} dispatch={dispatch}>
-          50
-        </Button>
+        <Button>5</Button>
+        <Button>10</Button>
+        <Button>15</Button>
+        <Button>25</Button>
+        <Button>50</Button>
 
         <label htmlFor="custom-tip">
           <input
@@ -44,9 +36,7 @@ export default function Form({ bill, people, tip, customTip, dispatch }) {
         </label>
       </div>
 
-      <Input name="people" people={people} dispatch={dispatch}>
-        Number of People
-      </Input>
+      <Input name="people">Number of People</Input>
     </form>
   );
 }
