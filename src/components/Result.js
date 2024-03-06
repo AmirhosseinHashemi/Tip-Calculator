@@ -3,7 +3,7 @@ import ResultRow from "./ResultRow";
 
 export default function Result() {
   const { amount, total } = useCalc();
-  const { dispatch } = useDispatchCalc();
+  const dispatch = useDispatchCalc();
 
   return (
     <section className="result">

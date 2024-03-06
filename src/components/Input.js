@@ -2,7 +2,7 @@ import { useCalc, useDispatchCalc } from "./CalcContext";
 
 export default function Input({ children, name }) {
   const { bill, people } = useCalc();
-  const { dispatch } = useDispatchCalc();
+  const dispatch = useDispatchCalc();
 
   return (
     <div className={`form__${name}`} aria-label={name}>

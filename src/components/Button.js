@@ -2,7 +2,7 @@ import { useCalc, useDispatchCalc } from "./CalcContext";
 
 export default function Button({ children }) {
   const { tip } = useCalc();
-  const { dispatch } = useDispatchCalc();
+  const dispatch = useDispatchCalc();
 
   return (
     <button

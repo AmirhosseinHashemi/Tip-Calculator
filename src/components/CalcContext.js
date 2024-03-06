@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useContext, useReducer } from "react";
 
 // state managment
 const initialState = {
@@ -73,7 +73,7 @@ function CalcProvider({ children }) {
         total,
       }}
     >
-      <CalcDispatchContext.Provider value={{ dispatch }}>
+      <CalcDispatchContext.Provider value={dispatch}>
         {children}
       </CalcDispatchContext.Provider>
     </CalcContext.Provider>
@@ -82,13 +82,11 @@ function CalcProvider({ children }) {
 
 // custom hooks
 function useCalc() {
-  const context = createContext(CalcContext);
-  return context;
+  return useContext(CalcContext);
 }
 
 function useDispatchCalc() {
-  const context = createContext(CalcDispatchContext);
-  return context;
+  return useContext(CalcDispatchContext);
 }
 
 export {

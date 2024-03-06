@@ -4,7 +4,7 @@ import Input from "./Input";
 
 export default function Form() {
   const { customTip } = useCalc();
-  const { dispatch } = useDispatchCalc();
+  const dispatch = useDispatchCalc();
 
   return (
     <form className="form" id="form">
